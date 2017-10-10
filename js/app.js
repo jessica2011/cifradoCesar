@@ -8,10 +8,12 @@ function cipher(sentence, n){
         //almaceno en el mismo array la nueva posicion de la letra, ahora encriptada con un desplazamiento de n = 33;
         arr[i] = (( arr[i] - 65 + n ) % 26 + 65);
         //Con el mismo array, guardo la letra de la posicion asignara anteriormente
-        arr[i] = String.fromCharCode(arr[i]);
-}
+				arr[i] = String.fromCharCode(arr[i]);
+				
+		}
     // retorno el array  en el nuevo tipo de valor string, usando join
-    return document.write ( 'Su mensaje CIFRADO es: \n' + arr.join('') );
+		return document.write ( 'Su mensaje CIFRADO es: \n' + arr.join('') );
+		
 }
 
 function decipher(sentence,n){
@@ -21,14 +23,17 @@ function decipher(sentence,n){
         //almaceno en el mismo array la nueva posicion de la letra, ahora encriptada con un desplazamiento de n = 33;
         arr[i] = (( arr[i] + 65 - n ) % 26 + 65);
         //Con el mismo array, guardo la letra de la posicion asignara anteriormente
-        arr[i] = String.fromCharCode( arr[i] );
-}
+				arr[i] = String.fromCharCode( arr[i] );
+				
+		}
     // retorno el array  en el nuevo tipo de valor string, usando join
-    return document.write ( 'Su mensaje DECIFRADO es: \n' + arr.join('') );
+		return document.write ( 'Su mensaje DECIFRADO es: \n' + arr.join('') );
+		
 }
 
 
 
+// aqui es para validar el campo de entrada
 
 var sentence = '';
     //creo un flujo repetivo para mostrar las opciones y escribir la frase a encriptar o desencriptar
@@ -44,10 +49,10 @@ var sentence = '';
                 //convierto la frase en mayuscula
                 sentence = prompt('Su mensaje es: ').toUpperCase();
                 //condiciona q la frase sea vacia o numeral
-                if(sentence.length == 0 || typeof(sentence) == 'number'){
+                if (sentence.length == 0 || typeof(sentence) == 'number') {
                     alert('error no se ingresa campo vacio o numeral');
                 // llamo a la funcion cipher
-                }else  cipher(sentence, 33);
+                } else  cipher(sentence, 33);
 
             break;
 
@@ -68,7 +73,8 @@ var sentence = '';
 
             default:
                 //En caso se escriba otra opcion, mostar un alert de que no existe esa opcion
-                alert('No hay esa opción');
-        }
-    // dgenerar el nuevo bucle si las opciones son diferente a 1, 2 ó 3
-    } while((option != 1) && (option != 2) && (option != 3));
+								alert('No hay esa opción');
+								
+      }
+    //generar el nuevo bucle si las opciones son diferente a 1, 2 ó 3
+    } while ((option != 1) && (option != 2) && (option != 3));
